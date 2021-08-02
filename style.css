@@ -23,13 +23,14 @@ flex-direction: column;
 align-items: center;
 }
 .wrapper {
-width: 85vw;
-height: 200px;
-border: 1px dotted rgb(63, 104, 138);
-display: flex;
-flex-direction: column-reverse;
-align-items: center;
-cursor: pointer;
+    width: 85vw;
+    height: 200px;
+    border: 1px dotted rgb(63, 104, 138);
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    cursor: pointer;
+    background-color: white;
 }
 .wrapper:hover {
 background-color: snow;
