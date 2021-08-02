@@ -1,0 +1,10 @@
+body {
+background-image: linear-gradient(to right, #067d0e, #32b83b, #008c09 );
+color: snow;
+font-family:  sans-serif;
+text-transform: uppercase;
+}
+h1 {
+text-align: center;
+margin: 40px;
+}
