@@ -1,0 +1,10 @@
+.boxs{
+    display: flex;
+    justify-content:space-around;
+}
+
+.box1, .box2, .box3{
+    width: 25%;
+    height: 200px;
+    border: 2px solid black;
+}
