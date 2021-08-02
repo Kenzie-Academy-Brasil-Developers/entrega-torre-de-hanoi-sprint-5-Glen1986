@@ -1,9 +1,9 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400&family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&family=Style+Script&display=swap');
 
 body {
 background-image: linear-gradient(to right, #067d0e, #32b83b, #008c09 );
 color: snow;
-font-family:  sans-serif;
+font-family: 'Open Sans Condensed';
 text-transform: uppercase;
 }
 h1 {
