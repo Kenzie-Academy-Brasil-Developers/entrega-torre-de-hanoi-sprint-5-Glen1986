@@ -8,6 +8,7 @@ content.appendChild(tower1)
 tower1.addEventListener('click', () => game('stack1'));
 tower1.setAttribute('for', 'box1')
 
+
 const tower2 = document.createElement('div');
 tower2.id = 'stack2';
 tower2.classList.add('wrapper', 'tower');
@@ -55,7 +56,6 @@ disc5.classList.add('box', 'box5');
 tower1.appendChild(disc5);
 
 
-
 /* game */
 
 let torreOrigem;
@@ -64,13 +64,11 @@ let qntTorreOrigem;
 let qntTorreDestino;
 let lastElementOrigin;
 let lastElementDestino;
-let contador = 0;
 
 
 function game(valor) {
     let ids = document.getElementById(valor);
     let lastTower = document.getElementById('stack3')
-    let count = document.getElementById('movimentos')
 
     //Selecionando Clique
     if(torreOrigem == undefined){
@@ -87,24 +85,18 @@ function game(valor) {
     if(lastElementDestino === null || lastElementDestino.clientWidth > lastElementOrigin.clientWidth) {
         // movendo
         torreDestino.appendChild(lastElementOrigin);
+
         //resetando elementos
         torreOrigem = undefined;
         torreDestino = undefined;
-        qntTorreOrigem = undefined;
-        qntTorreDestino = undefined;
-        lastElementOrigin = undefined;
-        lastElementDestino = undefined;
-
         tower1.style.border = "1px dotted rgb(63, 104, 138)";
         tower2.style.border = "1px dotted rgb(63, 104, 138)";
         tower3.style.border = "1px dotted rgb(63, 104, 138)";
 
         if(lastTower.childElementCount == 5){
-            alert('Você Venceu!');
-            window.location.reload();
+            alert('Você Venceu!')
         }
-        contador +=1
-        count.innerText = contador
+
     }else{
         alert('Selecione um local válido!')
         torreOrigem = undefined;
@@ -114,5 +106,4 @@ function game(valor) {
         tower2.style.border = "1px dotted rgb(63, 104, 138)";
         tower3.style.border = "1px dotted rgb(63, 104, 138)";
     }
-    
 }
