@@ -55,6 +55,7 @@ disc5.classList.add('box', 'box5');
 tower1.appendChild(disc5);
 
 
+
 /* game */
 
 let torreOrigem;
