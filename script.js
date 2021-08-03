@@ -100,6 +100,7 @@ function game(valor) {
 
         if(lastTower.childElementCount == 5){
             alert('Você Venceu!');
+            window.location.reload();
         }
         contador +=1
         count.innerText = contador
