@@ -64,13 +64,11 @@ let qntTorreOrigem;
 let qntTorreDestino;
 let lastElementOrigin;
 let lastElementDestino;
-let contador = 0;
 
 
 function game(valor) {
     let ids = document.getElementById(valor);
     let lastTower = document.getElementById('stack3')
-    let count = document.getElementById('movimentos')
 
     //Selecionando Clique
     if(torreOrigem == undefined){
@@ -87,6 +85,7 @@ function game(valor) {
     if(lastElementDestino === null || lastElementDestino.clientWidth > lastElementOrigin.clientWidth) {
         // movendo
         torreDestino.appendChild(lastElementOrigin);
+
         //resetando elementos
         torreOrigem = undefined;
         torreDestino = undefined;
@@ -95,10 +94,9 @@ function game(valor) {
         tower3.style.border = "1px dotted rgb(63, 104, 138)";
 
         if(lastTower.childElementCount == 5){
-            alert('Você Venceu!');
+            alert('Você Venceu!')
         }
-        contador +=1
-        count.innerText = contador
+
     }else{
         alert('Selecione um local válido!')
         torreOrigem = undefined;
@@ -108,5 +106,4 @@ function game(valor) {
         tower2.style.border = "1px dotted rgb(63, 104, 138)";
         tower3.style.border = "1px dotted rgb(63, 104, 138)";
     }
-    
 }
