@@ -8,7 +8,6 @@ content.appendChild(tower1)
 tower1.addEventListener('click', () => game('stack1'));
 tower1.setAttribute('for', 'box1')
 
-
 const tower2 = document.createElement('div');
 tower2.id = 'stack2';
 tower2.classList.add('wrapper', 'tower');
@@ -90,6 +89,11 @@ function game(valor) {
         //resetando elementos
         torreOrigem = undefined;
         torreDestino = undefined;
+        qntTorreOrigem = undefined;
+        qntTorreDestino = undefined;
+        lastElementOrigin = undefined;
+        lastElementDestino = undefined;
+
         tower1.style.border = "1px dotted rgb(63, 104, 138)";
         tower2.style.border = "1px dotted rgb(63, 104, 138)";
         tower3.style.border = "1px dotted rgb(63, 104, 138)";
