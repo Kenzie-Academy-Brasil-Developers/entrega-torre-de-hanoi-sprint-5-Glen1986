@@ -43,3 +43,45 @@ disc5.classList.add('box', 'box5');
 tower1.appendChild(disc5);
 
 
+//GAME
+const towers = document.querySelectorAll('.tower');
+
+let isClick = false;
+let lastElm = undefined;
+let storedElm = undefined;
+let countMoves = 0;
+let towersInOrigin = 0;
+let towersInDestiny = 0;
+
+const game = (e) => {
+    const tow = e.currentTarget;
+
+    if (isClick) {
+        isClick = false;
+        console.log('Clique 2')
+        storedElm = tow.lastElementChild;
+        tow.appendChild(lastElm);
+        countMoves++;
+        const moves = document.getElementById('moves');
+        moves.innerText = "Movimentos: " + countMoves;
+        towersInDestiny = tow.childElementCount
+        if (storedElm != null && lastElm.clientWidth > storedElm.clientWidth) {
+            alert ('Movimento errado! Nenhuma peça maior pode ser colocada sobre uma menor. Clique em OK para começar de novo.')
+
+            location.reload();
+        }
+    } else {
+        if (tow.childElementCount == 0) {
+            alert('Você não pode clicar em um lugar vazio!!' + '\n' + 'Clique em OK para começar de novo.')
+            location.reload();
+        } else {
+            isClick = true;
+            console.log('Clique 1')
+            lastElm = tow.lastElementChild;
+            towersInOrigin = tow.childElementCount;
+        } 
+    }
+
+}
+towers.forEach(tower => tower.addEventListener('click', game));
+
