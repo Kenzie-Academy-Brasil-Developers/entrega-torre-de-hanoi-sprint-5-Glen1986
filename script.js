@@ -52,6 +52,7 @@ let storedElm = undefined;
 let countMoves = 0;
 let towersInOrigin = 0;
 let towersInDestiny = 0;
+let lastTower = document.getElementById('stack3')
 
 const game = (e) => {
     const tow = e.currentTarget;
@@ -74,11 +75,17 @@ const game = (e) => {
         if (tow.childElementCount == 0) {
             alert('Você não pode clicar em um lugar vazio!!' + '\n' + 'Clique em OK para começar de novo.')
             location.reload();
-        } else {
+        }else {
             isClick = true;
             console.log('Clique 1')
             lastElm = tow.lastElementChild;
             towersInOrigin = tow.childElementCount;
+        }
+
+
+        if(towersInDestiny == 5) {
+            alert (`Você venceu!! acertou com ${countMoves} movimentos`)
+            location.reload();
         } 
     }
 
