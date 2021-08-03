@@ -70,6 +70,7 @@ let contador = 0;
 function game(valor) {
     let ids = document.getElementById(valor);
     let lastTower = document.getElementById('stack3')
+    let secundTower = document.getElementById('stack2')
     let count = document.getElementById('movimentos')
 
     //Selecionando Clique
@@ -99,7 +100,7 @@ function game(valor) {
         tower2.style.border = "1px dotted rgb(63, 104, 138)";
         tower3.style.border = "1px dotted rgb(63, 104, 138)";
 
-        if(lastTower.childElementCount == 5){
+        if(lastTower.childElementCount == 5 || secundTower.childElementCount == 5){
             alert('Você Venceu!');
             window.location.reload();
         }
