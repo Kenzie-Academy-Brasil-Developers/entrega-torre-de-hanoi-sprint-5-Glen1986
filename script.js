@@ -1,5 +1,6 @@
 const content = document.querySelector('.conteudo');
-
+const contenido = document.getElementById('body');
+const media = document.createElement('audio');
 // TOWERS
 const tower1 = document.createElement('div');
 tower1.id = 'stack1';
@@ -68,6 +69,12 @@ let contador = 0;
 
 
 function game(valor) {
+
+    contenido.appendChild(media)
+    media.src="./media/Cartoon Metal Thunk.mp3"
+    media.currentTime =1.8,2.2;
+    media.play();
+
     let ids = document.getElementById(valor);
     let lastTower = document.getElementById('stack3')
     let secundTower = document.getElementById('stack2')
@@ -101,12 +108,22 @@ function game(valor) {
         tower3.style.border = "1px dotted rgb(63, 104, 138)";
 
         if(lastTower.childElementCount == 5 || secundTower.childElementCount == 5){
+            contenido.appendChild(media)
+            media.src="./media/Cumbia City - An Jone.mp3"
+            media.currentTime =1.8,2.2;
+            media.play();
+
             alert('Você Venceu!');
             window.location.reload();
         }
-        contador +=1
-        count.innerText = contador
+            contador +=1
+            count.innerText = contador
     }else{
+            contenido.appendChild(media)
+            media.src="./media/Cartoon Metal Thunk.mp3"
+            media.currentTime =10.8;
+            media.play();
+ 
         alert('Selecione um local válido!')
         torreOrigem = undefined;
         torreDestino = undefined;
